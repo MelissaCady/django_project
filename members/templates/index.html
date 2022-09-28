@@ -1,11 +1,25 @@
 <h1>Members</h1>
 
 <table border="1">
+    <tr>
+        <th>id user</th>
+        <th>Username</th>
+        <th>First name</th>
+        <th>lien user</th>
+        <th>nom du projet</th>
+      </tr>
 {% for x in mymembers %}
 <tr>
 <td><a href="update/{{ x.id }}">{{ x.id }}</a></td>
-<td>{{ x.firstname }}</td>
+
+<td> <a href="userpage/{{ x.id }}" > {{ x.firstname }}</a> </td>
 <td>{{ x.lastname }}</td>
+
+{% for theproject in myprojects %}
+<td><a href="update/{{ theproject.id }}">{{ theproject.id }}</a></td>
+<td>{{ theproject.name_project }}</td>
+{% endfor %}
+
 <td><a href="delete/{{ x.id }}">delete</a></td>
 </tr>
 {% endfor %}

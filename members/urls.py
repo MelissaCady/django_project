@@ -9,6 +9,6 @@ urlpatterns = [
     path('update/<int:id>', views.update, name='update'),
     path('update/updaterecord/<int:id>', views.updaterecord, name='updaterecord'),
     path('home/', views.home, name='home'),
-    path('template/', views.testing, name='template'),
-    
+    path('userpage/<id>/', views.userPage, name='userpage'),
+    path('base_site', views.base_site, name='base_site')
 ]
